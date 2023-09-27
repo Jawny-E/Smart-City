@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Dystopia city</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdefbda3c5.js" crossorigin="anonymous"></script>
+    </head>
+
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="images/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times menuicon" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HEIM</a></li>
+                <li><a href="informasjon.html">OM PROSJEKTET</a></li>
+                <li><a href="okonmi.html">ØKONOMI</a></li>
+                <li><a href="bilstyring.html">BILEN</a></li>
+                <li><a href="bystyring.html">BYEN</a></li>
+            </ul>
+        </div>
+        <i class="fa-solid fa-bars menuicon" onclick="showMenu()"></i>
+    </nav>
+<div class="text-box-under">
+    <h1>Økonomistyring</h1>
+    <p>
+        Gjennom denne nettsida kan du styre Zumobilen, økonomien til byen,
+        tjene pengar til bilen,<br> lysa i byen og sjølvfølge lese meir om oss.
+    </p>
+    <h3>Live strømpris(øre/kWh): <div class="powerPrice"></div></h3> 
+    
+</div>
+</section>
+
+<!--Section for knappa og tal-->
+<section class="kontrollpanel">
+<div class="grid-container">
+    <div class="numbers">
+        <h1>Oppdaterte tal</h1>
+        <ul style="list-style:none;">
+            <li>
+                <h3>På kontoen(kr):</h3>
+            </li>
+            <li id="zumoKonto">
+                ###
+            </li>
+            <li>
+                <h3>Straumpris(øre/kWh):</h3>
+            </li>
+            <li class="powerPrice">
+                ###
+            </li>
+            <li>
+                <h3>ZumoBatteri:</h3>
+            </li>
+            <li id="batteryPercent">
+                ###
+            </li>
+        </ul>
+    
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button" onclick="setPrice20()"><span class="text">Billig straum!</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text" onclick="setPrice100()">Svindyr straum</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text" onclick="addMoney(-50);">Kjøp Midjoskyen merch</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text" onclick="addMoney(500);">Du får 500kr frå ein onkel i amerika</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text" onclick="fullBattery();">Sett fullt batteri</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button" onclick="refreshNums();"><span class="text">Oppdater tal</span></button>
+    </div>
+    <div class="empty">
+    </div>
+</div>    
+</section>
+
+<!--Section for genrell informasjon-->
+<section class="info">
+<div class="grid-container-info">
+    <div class="col-info">
+        <img src="/images/cash.jpg">
+    </div>
+    <div class="col-info">
+        <h3>Om økonomien</h3>
+        <p>Denne delen av prosjektet er direkte knytt til dei andre. Derfor 
+            var det viktig å få denne til å verke realisitsk. Straumprisen er direkte
+            knytt til solcellepanelet på miljøstasjonen. Denne straumprisen er basert på ein funksjon
+            som skal immitere reele forhald vha ein logaritmisk funksjon.
+            Solcellepanelet er sett saman av to photoresistanser og ein servomotor. Nå det justerast prøver servoen å
+            vri seg sånn at resistorane har lik sensorverdi. Deretter blir differansen mellom
+            sensorverdiane brukt til å avgjere straumprisen. Dersom differansen er høg er panelet 
+            "ueffektivt" og straumprisen blir høg. 
+        </p>
+    </div>
+</div>
+</section>
+
+<div class="space">
+
+</div>
+
+<!--Section for Kontakt oss-->
+<section class="bottom">
+    <h2>Kontakt oss</h2>
+    <ul>
+        <li>
+            Tlf: +47 95 55 52 08
+        </li>
+        <li>
+            e-post: ellenij@stud.ntnu.no
+        </li>
+        <li>
+            <a href="https://www.instagram.com/e.johnsen03/">Intsagram</a>
+        </li>
+    </ul>
+</section>
+
+<script>
+    var navLinks=document.getElementById("navLinks");
+    function httpGet(theUrl){ /*Funksjon som lat oss hente data frå databasen*/
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;}
+    function httpPut(theUrl, message){ /*Funksjon som putter informasjon inn i databasen*/
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "PUT", theUrl, false ); // false for synchronous request
+        xmlHttp.send( message );}
+    
+    function refreshNums(){ /*Denne funksjoen er laga for å oppdatere tala på nettsida*/
+        /*Henter temperatur og humidity frå databasen*/
+        var pris =httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/strompris.json");
+        var zumoKontokr =httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/zumoKonto.json");
+        var zumoBattery = httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/zumoBattery.json");
+        /*Skriver det inn på sida*/
+        var x = document.getElementsByClassName("powerPrice");
+            for(i=0; i<x.length; i++){
+            x[i].innerHTML = pris;
+            }
+        document.getElementById("batteryPercent").innerHTML = zumoBattery;
+        document.getElementById("zumoKonto").innerHTML= zumoKontokr;
+    }
+    function fullBattery(){
+        httpPut("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/zumoBattery.json",100);
+    }
+    function setPrice20(){
+        httpPut("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/strompris.json", 10);
+    }
+    function setPrice100(){
+        httpPut("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/strompris.json", 60);
+    }
+    function addMoney(belop){
+        var zumoKontokr =httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/zumoKonto.json");
+        newNumber = parseInt(zumoKontokr);
+        newNumber = newNumber + belop;
+        httpPut("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/zumoKonto.json", newNumber);
+    }
+    setInterval(refreshNums, 300);
+
+    function showMenu(){
+        navLinks.style.right="0px";}
+    function hideMenu(){
+        navLinks.style.right="-200px";}
+</script>
+</body>
+</html>

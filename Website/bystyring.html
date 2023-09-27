@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Dystopia city</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdefbda3c5.js" crossorigin="anonymous"></script>
+    </head>
+
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="images/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times menuicon" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HEIM</a></li>
+                <li><a href="informasjon.html">OM PROSJEKTET</a></li>
+                <li><a href="okonmi.html">ØKONOMI</a></li>
+                <li><a href="bilstyring.html">BILEN</a></li>
+                <li><a href="bystyring.html">BYEN</a></li>
+            </ul>
+        </div>
+        <i class="fa-solid fa-bars menuicon" onclick="showMenu()"></i>
+    </nav>
+<div class="text-box-under">
+    <h1>Bykontroll</h1>
+    <p>
+        Gjennom denne nettsida kan du styre Zumobilen, økonomien til byen,
+        tjene pengar til bilen,<br> lysa i byen og sjølvfølge lese meir om oss.
+    </p>
+    <h3>Live strømpris (øre/kWh): <div id="strompris"></div></h3> 
+    <!--Sett inn tal for strømprisen her-->
+</div>
+</section>
+
+<!--Section for knappa og tal-->
+<section class="kontrollpanel">
+<div class="grid-container">
+    <div class="numbers">
+        <h1>Oppdaterte tal</h1>
+        <ul style="list-style:none;">
+            <li>
+                <h3>Temperatur:</h3>
+            </li>
+            <li id="Celsius">
+                ###
+            </li>
+            <li>
+                <h3>Luftfuktigheit:</h3>
+            </li>
+            <li id="ProsentL">
+                ###
+            </li>
+            <li>
+                <h3>Viftestatus:</h3>
+            </li>
+            <li id="vifteState">
+                ###
+            </li>
+            <li>
+                <h3>Bommen:</h3>
+            </li>
+            <li id="bomState">
+                ###
+            </li>
+        </ul>
+    
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button" onclick="refreshNums();"><span class="text">Oppdater tala</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text">Empty Button</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text">Nothing to do here</span></button>
+    </div>
+    <div class="knapp">
+        <button class="button-75" role="button"><span class="text">Kjedeleg, men ingenting her</span></button>
+    </div>
+    <div class="empty">
+    </div>
+</div>    
+</section>
+
+<!--Section for genrell informasjon-->
+<section class="info">
+<div class="grid-container-info">
+    <div class="col-info">
+        <img src="/images/smartcity.jpg">
+    </div>
+    <div class="col-info">
+        <h3>Miljøstasjonen</h3>
+        <p>Miljøstasjonen bruker en ESP32 programmert i Arduino C som hovedkomponent. I tillegg til arduino C inkluderte vi bibliotekene: Wifi, PubSubClient, Wire, Servo, Adafruit_Sensor og Adafruit_AHT10. 
+            Koblet til ESP32 er desse komponentene: AHT10, DC-motor, OLED-skjerm, tre 2.2kohm resistanser, to photoresistanser, en servomotor og en gul LED.
+            Programmeringsstragien var i hovedsak å bygge funksjon for funksjon og legge de i void-loop. 
+            Vi valgte denne fremgangsmåten fordi hovedfunksjonen til denne modulen er å sende inn og ut tall, dette gjør at funksjonene er lite påvirket av hverandre eller tidsforsinkinger. 
+            Oppbyggingen av funksjoner ble gjennomført vha pseudokode, og utprøving og ferdigstilling ble gjennomført individuelt. 
+            Siden funksjonene var enkle traff vi ikke på noen problemer når de ble samkjørt. Ett viktig valg vi tok, var å sende ut MQTT meldinger inni funksjonene i stedet for i void loop. 
+            Dette gjør at vi får mindre å skrive i void loop, og MQTT meldingene blir sendt separat slik at dersome ett problem skulle oppstå i meldingsoverføring kan koden fortsette 
+            med de andre meldingene. Denne delen av nettsiden mangler funksjoner pga begrensinger med tid og hardware som kan utføre funksjonene. Videre med mer tid kunne vi tenke oss å legge til: 
+            "Simuler tempertur", "Skru på/av gatelys" og "endre OLED informasjon"</p>
+    </div>
+</div>
+</section>
+
+<div class="space">
+
+</div>
+
+<!--Section for Kontakt oss-->
+<section class="bottom">
+    <h2>Kontakt oss</h2>
+    <ul>
+        <li>
+            Tlf: +47 95 55 52 08
+        </li>
+        <li>
+            e-post: ellenij@stud.ntnu.no
+        </li>
+        <li>
+            <a href="https://www.instagram.com/e.johnsen03/">Intsagram</a>
+        </li>
+    </ul>
+</section>
+
+<script>
+    function httpGet(theUrl){
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;}
+    
+    function refreshNums(){ /*Denne funksjoen er laga for å oppdatere tala på nettsida*/
+        /*Henter temperatur og humidity frå databasen*/
+        var pris =httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/strompris.json");
+        var temp =httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/temp.json");
+        var humidity =httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/humidity.json");
+        var vinkel = httpGet("https://datatest-afc91-default-rtdb.europe-west1.firebasedatabase.app/bomVinkel.json");
+        /*Skriver det inn på sida*/
+        document.getElementById("strompris").innerHTML = pris;
+        document.getElementById("Celsius").innerHTML = temp;
+        document.getElementById("ProsentL").innerHTML= humidity;
+        /*Tempereaturen avgjer òg viftestatusen*/
+        if(temp>= 25){
+            document.getElementById("vifteState").innerHTML="På";}
+        else{
+            document.getElementById("vifteState").innerHTML="Av";}
+        /*Vinkelen avgjer bomstatusen*/
+        if(vinkel >= 40){
+            document.getElementById("bomState").innerHTML="Oppe";
+        }
+        else{
+            document.getElementById("bomState").innerHTML="Nede";
+        }
+    }
+    setInterval(refreshNums, 5000); /*Refresha tala kvart sekund*/
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0px";}
+    function hideMenu(){
+        navLinks.style.right="-200px";}
+</script>
+</body>
+</html>

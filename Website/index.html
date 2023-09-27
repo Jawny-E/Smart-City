@@ -1,0 +1,182 @@
+<!---Inspirasjon henta frå: (Easy Tutorials, 2022) 
+*/--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Dystopia city</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/bdefbda3c5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="images/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times menuicon" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HEIM</a></li>
+                <li><a href="informasjon.html">OM PROSJEKTET</a></li>
+                <li><a href="okonmi.html">ØKONOMI</a></li>
+                <li><a href="bilstyring.html">BILEN</a></li>
+                <li><a href="bystyring.html">BYEN</a></li>
+            </ul>
+        </div>
+        <i class="fa-solid fa-bars menuicon" onclick="showMenu()"></i>
+    </nav>
+<div class="text-box">
+    <h1>Verdas beste smartby</h1>
+    <p>
+        Gjennom denne nettsida kan du styre Zumobilen, økonomien til byen,
+        tjene pengar til bilen,<br> lysa i byen og sjølvfølge lese meir om oss.
+    </p>
+
+</div>    
+</section>
+<!--Andre avsnitt(course)-->
+<section class="course">
+    <h1>Våre tjenstea</h1>
+    <div class="row">
+        <div class="course-col">
+            <h3>Bilkontroll</h3>
+            <p>Ikkje fullført, då modulen blei fullført seint</p>
+        </div>
+        <div class="course-col">
+            <h3>Økonomistyring</h3>
+            <p>Gjennom denne sida kan du observere ulike verdiar relatert til økonomien som 
+                kontoutskrift for Zumo32u4, straumpris og effektiviteten til solcellepanela. 
+                Vidare kan du styre desse variablane manuelt, og tvinge solcellepanela til å omjustere seg
+            </p>
+        </div>
+        <div class="course-col">
+            <h3>Bykontroll</h3>
+            <p>
+                Bykontroll lar brukaren lar brukaren få direkte informasjon frå miljøstatsjonen vår.
+                Denne sida kan seinare koplast til 
+            </p>
+        </div>
+    </div>
+</section>
+
+<!----Campus (idk ka vi skal bruke denne til) ---->
+<section class="campus">
+    <h1>Vår arbeidsprosess</h1>
+    <p>Undersida om informasjon innheld nokre utdrag frå den endelege rapporten</p>
+    <div class="row">
+        <div class="campus-col">
+            <a href="informasjon.html#planlegging">
+            <img src="/images/planlegging.avif">
+            <div class="layer">
+                <h3>Planlegging</h3>
+            </div>
+            </a>
+        </div>
+        <div class="campus-col">
+            <a href="informasjon.html#programmering">
+            <img src="/images/progging.avif">
+            <div class="layer">
+                <h3>Programmering</h3>
+            </div>
+            </a>
+        </div>
+        <div class="campus-col">
+            <a href="informasjon.html#resultat">
+            <img src="/images/smartcity.jpg">
+            <div class="layer">
+                <h3>Resultat</h3>
+            </div>
+            </a>
+        </div>
+    </div>
+</section>
+ 
+
+<!---  Facilities-->
+<section class="facilities">
+    <h1>Nokre features i byen</h1>
+    <div class="row">
+        <div class="facilities-col">
+            <img src="/images/citylights.jpg">
+            <h3>Smart belysning</h3>
+            <p>Byen er utstyrt med lys som automatisk stiller seg inn etter mørket i rommet,
+                videre kan man her på nettsiden manuelt skru av lysene når ein skal drive vedlikehaldsarbeid</p>
+        </div>
+        <div class="facilities-col" on>
+            <img src="/images/firebase.png">
+            <h3>Live database</h3>
+            <p>All data som blir henta inn frå våre sensora blir oppdatert live i 
+                Google Firebase Realtime database. 
+            </p>
+        </div>
+        <div class="facilities-col">
+            <img src="/images/cash.jpg">
+            <h3>Økonomi</h3>
+            <p>
+                Byen har sitt eiget økonomiske system som er basert på søppeltømminga og fornybar energi.
+                Brukaren kan nytte nettsida vår til å manipulere dette, for å simulere ulike scenario.
+            </p>
+        </div>
+    </div>
+
+</section>
+<!---testemonials-->
+<section class="testemonials">
+    <h1>Anmeldelser</h1>
+    <div class="row">
+        <div class="testemonials-col">
+            <img src="/images/arne.jpg">
+            <div>
+                <p>Hadde denne byen vært smartare, måtte vi gitt den menneskerettigheitar</p>
+                <h3>Arne Midjo</h3>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+        <div class="testemonials-col">
+            <img src="/images/snoop.jpg">
+            <div>
+                <p>The fact is, the truth will come out. The truth will come out when its time.- and the truth is I would live in this city if it wasnt teeny</p>
+                <h3>Da Snoop Dogg</h3>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Section for Kontakt oss-->
+<section class="bottom">
+    <h2>Kontakt oss</h2>
+    <ul>
+        <li>
+            Tlf: +47 95 55 52 08
+        </li>
+        <li>
+            e-post: ellenij@stud.ntnu.no
+        </li>
+        <li>
+            <a href="popup.html">Intsagram</a>
+        </li>
+    </ul>
+</section>
+
+<!-----Javascript for toggle menu----->
+<script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0px";}
+    function hideMenu(){
+        navLinks.style.right="-200px";}
+</script>
+</body>
+</html>

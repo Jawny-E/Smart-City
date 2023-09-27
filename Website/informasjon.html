@@ -1,0 +1,391 @@
+<!---Inspirasjon henta frå (Coding Market, 2022) og (W3 Schools, 2022)
+*/--->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Dystopia city</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bdefbda3c5.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+<section class="header">
+    <nav>
+        <a href="index.html"><img src="images/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+            <i class="fas fa-times menuicon" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HEIM</a></li>
+                <li><a href="informasjon.html">OM PROSJEKTET</a></li>
+                <li><a href="okonmi.html">ØKONOMI</a></li>
+                <li><a href="bilstyring.html">BILEN</a></li>
+                <li><a href="bystyring.html">BYEN</a></li>
+            </ul>
+        </div>
+        <i class="fa-solid fa-bars menuicon" onclick="showMenu()"></i>
+    </nav>
+    <div class="text-box">
+        <h1>Prosjektinformasjon</h1>
+        <p>
+            Her kan du lese om gruppemedlema våre, få eit innblikk i prosjektgjennomføringa, <br> finne ei oppsummering av teorien eller bla gjennom galleriet vårt!
+        </p>
+    </div> 
+</section>
+
+
+<!--Vårt team under her, inspirert av https://www.youtube.com/watch?v=R3MQgUzUd6I-->
+<section class="ourTeam">
+    <div class="wrapper-team">
+        <h1>Vårt Team</h1>
+        <div class="our_team">
+            <div class="team_member">
+                <div class="member_img">
+                    <img src="/images/profiles/brage-circ.png">
+                    <div class="social_media">
+                        <div class="item">
+                            <a href="https://www.facebook.com/brage.isaksen">
+                            <i class="fa-brands fa-facebook-f fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.instagram.com/brage_isaksen/">
+                            <i class="fa-brands fa-instagram fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="">
+                            <i class="fa-solid fa-at fab"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Jarl Brage Isaksen</h3>
+                <span>Bydesign og Zumo</span>
+                <p>Det finnst inga gruppe som er komplett uten ein nordlending. Jarl Brage er
+                    ein hardtarbeidande type som gjennomføra det han har planlagd. I løpet av prosjektet
+                    har hans vansklegaste oppgåve vært å halde styr på dei fordømte ungane i gruppa.
+                </p>
+            </div>
+
+            <div class="team_member">
+                <div class="member_img">
+                    <img src="/images/profiles/eryk-circ.png">
+                    <div class="social_media">
+                        <div class="item">
+                            <a href="https://www.facebook.com/profile.php?id=100008262883218">
+                            <i class="fa-brands fa-facebook-f fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.instagram.com/erykss/">
+                            <i class="fa-brands fa-instagram fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="">
+                            <i class="fa-solid fa-at fab"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Eryk Siejka</h3>
+                <span>Sensornoder og IOT</span>
+                <p>Eryk er ein jovial type frå Bergen. Det er umogeleg å arbeide med han uten å smile. 
+                    Hadde hovudansvaret for Miljøstasjonen og var svært involvert i IoT planlegging. 
+                    Einaste problemet med Eryk er drikking på lab.
+                </p>
+            </div>
+
+            <div class="team_member">
+                <div class="member_img">
+                    <img src="/images/profiles/julie-circ.png">
+                    <div class="social_media">
+                        <div class="item">
+                            <a href="https://www.facebook.com/julie.engedaltufta">
+                            <i class="fa-brands fa-facebook-f fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.instagram.com/julietufta/">
+                            <i class="fa-brands fa-instagram fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="">
+                            <i class="fa-solid fa-at fab"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Julie Engedal Tufta</h3>
+                <span>Zumo og Økonomi</span>
+                <p>Julie frå Stavanger er alltid villig til å slå av ein prat og muntre opp gruppa.
+                    Julie sitt største problem akkuratt no er at Johnsen skriv nettsida på nynorsk.
+                </p>
+            </div>
+
+            <div class="team_member">
+                <div class="member_img">
+                    <img src="/images/profiles/john-circ.png">
+                    <div class="social_media">
+                        <div class="item">
+                            <a href="https://www.facebook.com/profile.php?id=100004909306565">
+                            <i class="fa-brands fa-facebook-f fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.instagram.com/e.johnsen03/">
+                            <i class="fa-brands fa-instagram fab"></i>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="mailto: ellenij@stud.ntnu.no">
+                            <i class="fa-solid fa-at fab"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3>Ellen Iren Johnsen</h3>
+                <span>IOT og Webdesign</span>
+                <p>Kjem opprinnleg frå Atløy, og er klassens eigne 03ar. Arbeidet hennes har fått kritikk som:
+                    "ganske all right", "imponerande gjennomsnittleg" og "slåande normalt"
+                    <br> 
+                    "Eg kan lage nettsida eg, om eg får skrive den på nynorsk"
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!---Section for prosjektinformasjon-->
+<section class="oppsummering">
+    <div id="planlegging"> <!---Planlegging-->
+        <h3>Planlegging</h3>
+        <p>Ved prosjektstart satte gruppen seg ned i ett møte for å avgjøre hvilke moduler som skulle bli inkludert i prosjektet, 
+            og hvem som skulle arbeide med hva i utgangspunktet. 
+            Vi valgte å dele gruppen inn i to hovedgrupper for å fordele arbeidet jevnt. 
+            Julie og Brage fokuserte på modulene SW-batteri, linjefølging og kommunikasjon mellom Zumo og ESP32. 
+            Eryk og Ellen arbeidet med ladestasjon, miljøstasjon, MQTT, Node-Red, nettside og database. 
+            <br><br> Denne fordelingen lot alle gruppemedlemmene arbeide med IoT og arbeide på sitt nivå. 
+            Vi ble enige om at all kode skulle være lett tilgjenglig for alle gruppemedlem og at kommunikasjonen skulle være åpen slik at alle kunne lære fra hverandre. 
+            Det siste steget i planleggingsfasen var å sette opp en by som oppfylte kravene gitt i oppgaveteksten, 
+            dette arbeidet tok Eryk og Brage ansvar for. 
+            Modulene vi endte opp med å inkuldere i prosjektet var: IoT releaterte moduler:  Nettside, 
+            Miljøstasjon (inkludert solcelle panel), Ladestasjon, MQTT/Node-RED, Bydesign, Software-batteri og kommunikasjon mellom ESP32 og Zumo
+        </p>
+    </div>
+    <div id="programmering"> <!---Programmering-->
+        <h3>Programmering</h3>
+        <p>Ein sentral del av prosjektet var å skape program som er lettleste og fungerte til formålet.
+            Derfor var det viktig for oss å ta utgongspunkt i Style Guiden til Google for C++. 
+            Formålet med dokumentet er å beskrive hva rettningslinjene for god kodeutvikling i C++, 
+            det er denne guiden som er fulgt i resten av prosjektet. 
+            Ifølge denne guiden er gode programløsninger kjennetegnet av: koden er optimalisert for leseren som kommer etter, 
+            konsistent stil, følger rettningslinjer satt av C++ fellesskapet, 
+            unngår komplekse strukturer og funksjoner og unngår globale variabler der mulig. 
+            Dokumentet viser til navngivingsstandarder for å oppfylle lettlesningskravet. 
+            Variabler skal ha navn skrive i små bokstaver med understrek mellom ordene, og konstanter skal starte med liten "k", 
+            ha stor bokstav i starten av hvert ord og ingen mellomrom mellom ordene. 
+            <br><br> For å oppfylle kravene i dokumentet bør for eksempel funksjonene skrive i C++ være korte, 
+            ha navn med stor bokstav i starten av hvert ord og ingen mellomrom, være kommentert hensiktsmessig, 
+            og bruke lokale variabler der det er mulig. 
+            I vår kode er funksjoner, variabler og konstanter navngitt etter funksjonsrettningslinjene. 
+            Videre bør lengre kommentarer være blokkommenter /*Som dette*/, 
+            blokk kommentarer kan også brukest over funksjoner da kommentaren i noen program kan visest når man hovrer over funksjonen. 
+            Kommentering bør være flittig brukt, men unngå å skrive kommentarer til banale kodesnutter. 
+            Dette gjør koden vanskligere å lese.
+            Vidare fokuserte vi på å vise brei kompetanse i programmering ved å vise ulike programstrukturar, 
+            switch-case, funksjonsbasert og flyt-basert. Arbeidet fokuserte i hovudsak på IoT, Node-Red, MQTT
+            og kommunikasjon med ESP32. 
+        </p>
+    </div>
+    <div id="resultat"> <!--- Praktisk gjennomføring-->
+        <h3>Resultat</h3>
+        <p>
+            I dette prosjektet var gruppens mål å utvikle en smart by. 
+            Enhver by har et bestemt areal den er avgrenset med. 
+            Derfor bestemte gruppen seg for å designe en egen by laget av treverk. 
+            Dette var ingen pålagt modul å gjennomføre, men gruppen bestemte seg for det, 
+            siden det uten tvil bidrar til å skape et mer helhetlig produkt. 
+            <br> <br> For gruppen var det svært viktig å skape følelsen av at gruppen selv utviklet en hel by fra bunnen av. 
+            Zumo-bilen hadde som sagt, bestemte kriterier for hvilken veibane den måtte være i stand til å gjennomføre. 
+            Den beste løsningen var da å innlemme alt på et sted. 
+            Veibanen ble derfor veiene i byen vår, mens de ledige plassene i byen skulle fylles ut av andre moduler. 
+            Deretter begynte gruppen å utvikle grunnleggende moduler relevante for at en by skal være i stand til å fungere. 
+            Det første elementet som ble utviklet var en miljøstasjon, som hentet inn temperaturen, 
+            fuktigheten og lysnivået i området. <br> <br>
+            Dette er en svært relevant funksjonalitet for enhver smart by å være i stand til å kunne overvåke sine egne værforhold og deretter bruke denne informasjonen til noe. 
+            Det første gruppen brukte sensorene til var å iverksette et nedkjølingsprogram i byen. 
+            Dersom det ble varmere enn 25 grader ble en vifte tatt på. Enhver by trenger også energi. 
+            Gruppens smarte city er basert på smarte solcelle paneler som justerer seg etter der det er mest lyst. 
+            Solcellepanelet består at to photoresistorer og det er i fra de det også blir målt hvor lyst det er i byen. 
+            Denne informasjonen brukes til å deretter styre byens smarte belysing, som aktiveres dersom det blir for mørkt. 
+            Dette er et element svært relevant for smart city tematikken siden, alle byer i verden må ha et system for å kunne styre belysingen sin.
+            Det neste fysiske elementet i byen er en ladestasjon for Zumo-bilen. 
+            Dette er også svært relevant for en smart city, 
+            for kjøretøy som er element nesten alle byer har må fylles/lades opp av drivstoff/strøm for å kunne fungere. 
+            <br> <br> Løsningen vi iverksatte legger opp til at dersom byen hadde hatt flere kjøretøy kunne hvert av dem indentifiseres og blitt belastet på individuell konto. 
+            Dette er da ved hjelp av en RFID-Reader og kort som blir plassert på undersiden av kjøretøyene. 
+            Reader-en er plassert i veibanen og dersom en bileier ønsker å lade kjøretøyet sitt kan individet selv bestemme prosenten den skal lades ved hjelp av å skru på et potensiometer plassert på ladestasjonen. 
+            En annen funksjonalitet ladestasjonen hadde var et reaksjonsspill basert på det vi hadde utviklet på de tidligere labbene. 
+            Dette fungerte som byens «casino» og var en måte å tjene penger på. 
+            <br> <br> På cloud-nivået til byen var det løsninger som inneholdt MQTT-protokollen og node-red som holdt alt sammen. 
+            Gruppen valgte også å utvikle en egen nettside der blant annet data fra sensorene skulle vises. 
+            Zumo modulene var sterkt knyttet til grunnleggende parametere et kjøretøy er innvolvert i. 
+            Det første som ble utviklet var et software batteri som skulle immitere oppførselen til et vanlig batteri. 
+            En ekstra funskjonalitet var at zumo-bilen etter å ha vært slått av og på igjen skal huske hvor mye batteri-prosent den hadde. 
+            Zumo-bil modulen inneholdt også en linjefølger kode med en ekstra anti kolliderings funksjonalitet. 
+            Det var også planlagt at bilen skulle være utstyrt med en ESP32 og dermed være i stand til å kunne sende ulike former for data til node-red systemet.
+             Det var også planlagt en servomotor mekanisme som heiste ned en bom for å stoppe bilen ved hjelp av anti kollisjon funskjonen den hadde. 
+             Dette skulle da skje dersom den kommuniserte at den hadde lite strøm ved hjelp av MQTT. 
+        </p>
+    </div>
+    <div > <!--Gruppesamarbeid-->
+        <h3>Gruppesamarbeid</h3>
+        <p>
+            Under prosjektet ble gruppen delt i to hovedgrupper for å kunne fordele arbeidet mest mulig rettferdig. 
+            Fordelingen av arbeid ble i stor grad endret underveis, den endelige fordelingen er oppgitt i Vedlegg A. 
+            Dette førte til at alle fikk utvikle sin kompetanse på flere områder og at gruppemedlemmene ble tryggere på hverandre. 
+            Fordelingen av arbeidsoppgaver la opp til at alle medlemmene fikk muligheten til å programmere og bygge opp hardware. 
+            <br><br> Gruppen fungerte bra med tanke på at det nærmeste en direkte konflikt var diskusjon om målform i rapporten.
+            Kompetaseoverføringen som skjedde innad i gruppen fungerte godt. 
+            Alle medlemmene var tilgjenglige og stilte opp på fritiden ved problem. 
+            Zumo-undergruppen fikk ikke muligheten til å få fullstendig oversikt over IoT delen av prosjektet, 
+            da denne kompetanseoverføringen var planlagt til når Zumo-ESP32 modulen skulle bli konstruert, 
+            grunnet tekniske problem. 
+        </p>
+    </div>
+</section>
+
+<!--Galleri frå prosjektet-->
+<section>
+<!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+        <img src="/images/gruppe1.jpg">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+        <img src="/images/gruppe2.jpg">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+        <img src="images/gruppe3.jpg">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+        <img src="images/gruppe4.jpg">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="images/gruppe5.jpeg">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+        <img src="images/gruppe6.jpg">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <!-- Thumbnail images -->
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="images/gruppe1.jpg" style="width:100%" onclick="currentSlide(1)" alt="På labben">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/gruppe2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Livsvilje = 0">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/gruppe3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Spander godis om du er sein">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/gruppe4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Blei ein kul krins, Ladestasjon">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/gruppe5.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Det går sikkert bra om du gir Bergensaren ei sag">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/gruppe6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Miljøstasjonsetup xD">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!--Section for Kontakt oss-->
+<section class="bottom">
+    <h2>Kontakt oss</h2>
+    <ul>
+        <li>
+            Tlf: +47 95 55 52 08
+        </li>
+        <li>
+            e-post: ellenij@stud.ntnu.no
+        </li>
+        <li>
+            <a href="https://www.instagram.com/e.johnsen03/">Intsagram</a>
+        </li>
+    </ul>
+</section>
+
+
+
+<script>
+    var navLinks=document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right="0px";}
+    function hideMenu(){
+        navLinks.style.right="-200px";}
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</body>
+</html>

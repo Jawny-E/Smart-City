@@ -1,0 +1,667 @@
+/*
+Dette CSS-dokumentet har element som er inspirert i frå andre kodar, 
+desse er oppgitt i html-dokumenta som er relevante. 
+Kommentarane vidare i teksten viser til kva html-dokument og section koden under  høyrer til
+Delar av koden er optimalisert for å fungere på einingar med mindre skjermar, grunna tid er ikkje dette gjennomført
+for alle delar. Vidare hadde det vært mogeleg å optimalisere, slik at det hadde vært færre linjer kode
+Igjen dette er ikkje gjennomført pga tid og erfaring med mediumet 
+
+Hex koder:
+Svart(bakgrunn) #0B0C10
+Grå(bakgrunn) #1F2833
+Grå(tekst) #C5C6C7
+Blå(overskrift) #66FCF1
+Blå(aksent) #45A29E
+*/
+
+/* Generelle instillinga for heile nettsida*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+/*html-alle, section header. Denne sectionen inneheld menyen og tittel med bakgrunnsbilde*/
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(11, 12, 16, 0.7),rgba(31, 40, 51, 0.7)),url(/images/circuit4.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style:none ;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #C5C6C7;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #66FCF1;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.text-box{
+    width:90%;
+    color: #C5C6C7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+    color: #66FCF1;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 26px;
+    color: #C5C6C7;
+}
+nav .menuicon{
+    display: none;
+}
+
+@media(max-width:700px){
+.text-box h1{
+    font-size: 20px;
+}
+.nav-links ul li{
+    display: block;
+}
+.nav-links{
+    position: absolute;
+    background: #337c79;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+}
+nav .menuicon{
+    display: block;
+    color: #C5C6C7;
+    margin: 10px;
+    font-size: 22px;}
+.nav-links ul{
+    padding: 30px;}}
+
+
+/*----html-index, section course.. Sectionen heiter course, grunna følging av ein tutorial,
+men inneheld for oss "Våre tjenestar" og tre boksar med informasjon ----*/
+.course{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 100px;
+    color: #0B0C10;
+
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background-color: #b2eeeb;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0 rgba(11, 12, 16, 0.2);
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+/*----- html-index, section campus. Sectionen heiter campus, grunna følging av ein tutorial,
+men inneheld for oss "Vår arbeidsprosess" og tre boksar med informasjon ----*/
+.campus{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    width: 100%;
+    height: 80vh;
+    display: block;
+    object-fit: cover;  
+}
+.layer{
+    background: rgba(194, 194, 194, 0.3);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(69, 162, 158, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #0B0C10;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+
+/*-----html-index, section facilities. Sectionen heiter facilities, grunna følging av ein tutorial,
+men inneheld for oss "Features" og tre boksar med informasjon ------*/
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top:100px ;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%;
+    max-height: 175px;
+    border-radius: 10px;
+}
+.facilities-col p{
+    padding: 0;
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15;
+    text-align: left;
+}
+
+/*---- Html index, section testemonials, viser anmeldelsa------*/
+.testemonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+    color: #0B0C10;
+}
+.testemonials-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #1F2833;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+}
+.testemonials-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+.testemonials-col p{
+    padding: 0;
+    color: #C5C6C7;
+}
+.testemonials-col h3{
+    margin-top: 15px;
+    text-align: left;
+    color: #C5C6C7;
+}
+.testemonials-col i{
+    color: #66FCF1;
+}
+@media(max-width:700px){
+    .testemonials-col img{
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+/*---- html alle, section bottom, kontakt oss sidene*/
+.bottom{
+    background-color: #1F2833;
+    color: #C5C6C7;
+    padding-top: 30px
+}
+.bottom h2{
+    padding-left: 10px;
+}
+.bottom a{
+    color: #66FCF1;
+}
+.bottom ul li{
+    padding: 10px 20px;
+}
+.bottom ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #66FCF1;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.bottom ul li:hover::after{
+    width: 100%;
+}
+/*html:(okonomi, bystyring, bilstyring, spel?), section: heading, class: text-box-under, viser litt informasjon*/
+.text-box-under{
+    width:90%;
+    color: #C5C6C7;
+    position: absolute;
+    text-align: left;
+    padding-left: 40px;
+}
+.text-box-under h3{
+    text-align: left;
+    font-size: 30px;
+    padding-top: 40px;
+}
+.text-box-under h1{
+    font-size: 62px;
+    padding-top: 20px;
+    color: #66FCF1;
+    text-decoration-color: #0B0C10!important;
+    text-decoration: underline;
+}
+.text-box-under p{
+    font-size: 14px;
+    padding-left: 0;
+    width: auto;
+}
+@media(max-width:700px){
+    .text-box-under h1{
+        font-size: 20px;
+    }
+.text-box-under h3{
+    font-size: 15px;
+}}
+/*Html: (bilstyring, bystyring, okonomi),  section: kontrollpanel, viser kontrollpanel med oppdatert informasjon*/
+.kontrollpanel{
+    margin: 5%;
+    align-items: center;
+    min-height: 70vh;}
+.kontrollpanel .numbers{
+    background-color: #1F2833;
+    color: #C5C6C7;
+    border-radius: 10px;
+    grid-column: 1;
+    grid-row: 1/4;
+    text-align: center;
+    padding-bottom: 10px;}
+.empty{
+    grid-column: 4;
+    grid-row: 1/4;}
+.grid-container {
+    display: inline-grid;
+    grid-gap: 25px;
+    grid-template-columns: 45vw 20vw 20vw 1fr;
+    grid-template-rows: auto;
+    justify-items: stretch;}
+.kontrollpanel .grid-container .numbers h3{
+    font-size: 3.5vh;}
+.kontrollpanel .grid-container .numbers h1{
+    text-decoration: underline !important;}
+.kontrollpanel .grid-container .numbers li{
+    list-style: none;
+    font-size: 2.5vh;}
+
+
+/*Css for knappane i kontrollpanelet, henta frå https://getcssscan.com/css-buttons-examples, Button 75*/
+.button-75 {
+    align-items: right;
+    align-content: right;
+    background-color: #45A29E;
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Codec cold",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 20vh;
+    justify-content: center;
+    letter-spacing: .4px;
+    line-height: 1;
+    width: 20vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: 0.5s;
+  }
+  .button-75:active {
+    outline: 0;
+  }
+  .button-75:hover {
+    outline: 0;
+    background-color: #0B0C10;
+  }
+  .button-75 span {
+    transition: all 200ms;
+  }
+  .button-75:hover span {
+    transform: scale(.9);
+    opacity: .75;
+  }
+  
+@media(max-width:700px){
+.grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    justify-items: stretch;}
+.button-75{
+    font-size: 10px;}
+
+}
+
+/*HTML: (okonomi, bystyring, bilstyring), section: info. Må ikkje forvekslast med informasjonsundersida
+her visast kunn ein bildeboks og ein tekstboks*/
+.info{
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+}
+.col-info{
+    background-color: #1F2833;
+    padding: 30px;
+    border-radius: 10px;
+    color: #C5C6C7;
+}
+.grid-container-info{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 50% 50%;
+    justify-content: stretch;
+}
+.col-info img{
+    max-width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+.space{
+    padding: 50px;
+}
+@media(max-width:700px){
+    .grid-container-info{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 100vh);
+    }
+}
+
+/*html: informasjon, section: outeam, denne delen var inspirert av ein tutorial*/
+.ourTeam{
+    background-image: linear-gradient(rgba(11, 12, 16, 0.7),rgba(31, 40, 51, 0.7)),url(/images/meets2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    min-height: 110vh;
+}
+.wrapper-team{
+    margin-top: 60px;
+    text-align: center;
+}
+.wrapper-team h1{
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+.wrapper-team .our_team{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.wrapper-team .our_team .team_member{
+    width: 250px;
+    margin: 5px;
+    background: #fff;
+    padding: 20px 10px;
+}
+.wrapper-team .our_team .team_member .member_img{
+    background: #C5C6C7;
+    max-width: 190px;
+    width: 100%;
+    height: 190px;
+    margin:0 auto;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.wrapper-team .our_team .team_member .member_img img{
+    width: 100%;
+    height: 100%;
+}
+.wrapper-team .our_team .team_member h3{
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    margin: 15px 0 0;
+}
+.wrapper-team .our_team .team_member span{
+    font-size: 10px;
+}
+.wrapper-team .our_team .team_member p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.wrapper-team .our_team .team_member .social_media{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 95%;
+    height: 95%;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+.wrapper-team .our_team .team_member .social_media .item{
+    margin: 0 10px;
+}
+.wrapper-team .our_team .team_member .social_media .fab{
+    color: #66FCF1;
+    font-size: 20px;
+}
+.wrapper-team .our_team .team_member .member_img:hover .social_media{
+    transform: scale(1);
+}
+
+/*Section som handtera prosjektresultat*/
+.oppsummering{
+    color: #1F2833;
+    margin: 6vh 6vw;
+    padding-top: 20px;
+    margin-right: 30vw;
+}
+.oppsummering p{
+    font-size: 3vh;
+    margin: 20px;
+}
+.oppsummering h3{
+    font-size: 5vh;
+}
+.oppsummering div{
+    background-color: #1F2833;
+    color: #C5C6C7;
+    padding: 15px;
+    margin: 20px;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  .mySlides img{
+    object-fit: cover;
+    object-position: 20% 30%;
+    height: 80vh;
+    width: 100vw;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+    object-fit: cover;
+  }
+  .column img{
+    width: 16.66%;
+    height: 20vh;
+    object-fit: cover;
+  }
+
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+
+
